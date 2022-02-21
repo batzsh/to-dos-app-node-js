@@ -1,7 +1,7 @@
 import { CreateUserUseCase } from "../usecases/create-user-use-case";
 import { Request, Response } from "express";
 
-export class CreateClientController {
+export class CreateUserController {
   async handle(request: Request, response: Response) {
     const { name, username, password } = request.body;
 
