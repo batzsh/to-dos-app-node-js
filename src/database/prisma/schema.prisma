@@ -21,9 +21,10 @@ model Users {
 }
 
 model Todos {
-  id        String @id @default(uuid())
+  id        String @id  @default(uuid())
   title     String
   deadline  DateTime
+  done      Boolean     @default(false)
   user_id   String
   user      Users       @relation(fields: [user_id], references: [id])
 
