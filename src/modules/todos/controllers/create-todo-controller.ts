@@ -3,11 +3,11 @@ import { Request, Response } from "express";
 
 export class CreateTodoController {
   async handle(request: Request, response: Response) {
-    const { title, deadline } = request.body;
-    const { user_id } = request.params;
+    const { user_id, title, deadline } = request.body;
 
     const createTodoUseCase = new CreateTodoUseCase();
-    const result = await createTodoUseCase.execute(user_id, {
+    const result = await createTodoUseCase.execute({
+      user_id,
       title,
       deadline
     });
