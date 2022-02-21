@@ -17,5 +17,15 @@ model Users {
   password  String
 
   @@map("users")
+  todos Todos[]
+}
 
+model Todos {
+  id        String @id @default(uuid())
+  title     String
+  deadline  DateTime
+  user_id   String
+  user      Users       @relation(fields: [user_id], references: [id])
+
+  @@map("todos")
 }
