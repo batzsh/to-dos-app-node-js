@@ -2,7 +2,7 @@ import { prisma } from "../../../database/prisma-client";
 import { hash } from "bcrypt";
 
 export class CreateUserUseCase {
-  async execute({ name, username, password }: CreateUserUseCase.Request) {
+  async execute({ name, username }: CreateUserUseCase.Request) {
     const userExists = await prisma.users.findFirst({
       where: {
         username: {
@@ -19,8 +19,7 @@ export class CreateUserUseCase {
     const user = await prisma.users.create({
       data: {
         name,
-        username,
-        password: await hash(password, 10)
+        username
       }
     });
 
@@ -32,6 +31,5 @@ export namespace CreateUserUseCase {
   export interface Request {
     name: string;
     username: string;
-    password: string;
   }
 }
