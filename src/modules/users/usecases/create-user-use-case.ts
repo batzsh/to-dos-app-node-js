@@ -19,11 +19,12 @@ export class CreateUserUseCase {
     const user = await prisma.users.create({
       data: {
         name,
-        username
+        username,
+        todos: {}
       }
     });
 
-    return user;
+    return { ...user, todos: [] };
   }
 }
 
