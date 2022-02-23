@@ -34,7 +34,7 @@
 </p>
 
 <h4 align="center">
-	Status: In progress :construction:
+	Status: Done 🚀
 </h4>
 
 
@@ -74,10 +74,6 @@ Summary
   - [x] update to-do by id
   - [x] mark to-do as done
   - [x] delete to-do by id
-
-- [ ] Tests:
-  - [ ] Users
-  - [ ] To-dos
 
 ---
 
