@@ -12,6 +12,6 @@ export class CreateTodoController {
       deadline
     });
 
-    return response.json(result);
+    return response.status(201).json(result);
   }
 }

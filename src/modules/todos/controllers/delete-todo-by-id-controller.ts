@@ -8,8 +8,6 @@ export class DeleteTodoByIdController {
     const deleteTodoByIdUseCase = new DeleteTodoByIdUseCase();
     await deleteTodoByIdUseCase.execute(id);
 
-    return response.status(201).json({
-      message: `Todo ${id} successfuly deleted`
-    });
+    return response.status(204);
   }
 }
